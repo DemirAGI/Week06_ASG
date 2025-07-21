@@ -49,12 +49,12 @@ body {
     align-items: center;
 }
 
-*/
+
 
 
 #close-splash {
     position: absolute;
-    top: 0.5rem; /* to make pixel calculation based on a multiplier */
+    top: 0.5rem; FONT_AS_A_MULTIPLIER
     right: 0.5rem;
     background: none;
     border: none;
@@ -92,6 +92,8 @@ body {
 .splash-cta:focus {
     background-color: #7C3AED;
 }
+
+*/
 
 header {
     background-color: #DFE3EB;
@@ -136,14 +138,6 @@ nav a:focus {
     background-color: #F7F7F7;
 }
 
-#hero img {
-    max-width: 150px;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-    margin-top: 2rem;
-}
-
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
@@ -157,65 +151,89 @@ p {
     color: #333333;
 }
 
-.cta {
-    background-color: #9B51E0;
-    color: #FFFFFF;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 5px;
-}
+.gallery {
 
-.cta:hover,
-.cta:focus {
-    background-color: #7C3AED;
-}
-
-#about {
-    padding: 3rem 0;
-    text-align: center;
-}
-
-#resources {
-    padding: 3rem 0;
-    background-color: #DFE3EB;
-}
-
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
     margin-top: 2rem;
 }
 
-.resource-card {
-    background-color: #FFFFFF;
-    padding: 1.5rem;
+.big-display {
+
+    max-width: 100%;
+    width: 100vm;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
 }
 
-.resource-card img {
-    max-width: 150px;
+
+.gallery-controls {
+
+    display: felx;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+}
+.thumbnail_strip {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    max-width: 100%;
+    width:  20x;
+    overflow: hidden;
+}
+
+
+.thumbnail {
+    width: 100px;
     height: auto;
     border-radius: 5px;
-    display: block;
-    margin: 0 auto 1rem;
+    cursor: pointer;
+    transition: transform 1s;
 }
 
-.resource-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #6F2F9F;
+.thumbnail:hover,
+.thumnbail:focus {
+    transform: scale (1.05); 
 }
 
-#cta {
-    padding: 3rem 0;
-    text-align: center;
+#back {
+    background-color: #9B51E0;
+    color: #FFFFFF;
+    border: 5px;
+    padding: 05rem 1 rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
 }
+
+#forward {
+    background-color: #9B51E0;
+    color: #FFFFFF;
+    border: 5px;
+    padding: 05rem 1 rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#back:hover,
+#back:focus,
+{
+    background-color: #7C3AED;
+}
+
+#forward:hover,
+#forward:focus,
+{
+    background-color: #7C3AED;
+}
+
 
 #contact {
     padding: 3rem 0;
@@ -244,16 +262,16 @@ footer a {
     text-decoration: none;
 }
 
+@media (min-width: 769px){
+.thumbnail_strip{
+    grid-template-coloumns: repeat(4,1fr);
+}
+}
 @media (max-width: 768px) {
     h1 {
         font-size: 1.8rem;
     }
-    .splash-content {
-        width: 80vw;
-        height: 60vh;
-        min-width: 300px;
-        min-height: 300px;
-    }
+    
     header .container {
         flex-direction: column;
         gap: 1rem;
@@ -262,7 +280,5 @@ footer a {
         flex-direction: column;
         gap: 1rem;
     }
-    .resource-grid {
-        grid-template-columns: 1fr;
-    }
+    
 }
